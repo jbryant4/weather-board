@@ -28,7 +28,7 @@ function displayDash(cityLat, cityLon) {
 
                         // create html elements
                         var title = $('<h2>').text(city + ' (' + currentDate.getMonth() + '/' + currentDate.getDate() + '/' + currentDate.getFullYear() + ')');
-                        var img = $('<img>').attr('scr', 'http://openweathermap.org/img/wn/'+currentIcon+'.png')
+                        var img = $('<img>').attr('scr', 'http://openweathermap.org/img/wn/' + currentIcon + '.png')
                         var temp = $('<p>').text('Temp: ' + currentTemp + ' °F');
                         var wind = $('<p>').text('Wind: ' + currentWs + ' MPH');
                         var humidity = $('<p>').text('Humidity: ' + currentHumidity + '%');
@@ -41,11 +41,42 @@ function displayDash(cityLat, cityLon) {
                         $('#current-day').append(wind);
                         $('#current-day').append(humidity);
                         $('#current-day').append(uvi);
-                 
+
                         // build 5 day forcast 
-                        console.log(data.daily[0].dt)
-                        var forcastDate = new Date()
-                        
+                        // place for loop here
+                        for (i = 1; i <= 5; i++) {
+
+                            // set varibles from response
+                            var forcastDate = new Date(data.daily[i].dt * 1000);
+                            var forcastIcon = data.daily[i].weather[0].icon;
+                            var forcastTemp = data.daily[i].temp.day;
+                            var forcastWs = data.daily[i].wind_speed;
+                            var forcastHumidity = data.daily[i].humidity;
+                            
+                            // creat div for forcast
+                            var forcastDiv = $('<div>').addClass('col-3 m-1 forcast');
+
+                            // create html elements
+                            var title1 = $('<h3>').text('(' + forcastDate.getMonth() + '/' + forcastDate.getDate() + '/' + forcastDate.getFullYear() + ')');
+                            var img1 = $('<img>').attr('scr', 'http://openweathermap.org/img/wn/' + forcastIcon + '.png')
+                            var temp1 = $('<p>').text('Temp: ' + forcastTemp + ' °F');
+                            var wind1 = $('<p>').text('Wind: ' + forcastWs + ' MPH');
+                            var humidity1 = $('<p>').text('Humidity: ' + forcastHumidity + '%');
+
+
+                            // append into div
+                            forcastDiv.append(title1);
+                            forcastDiv.append(img1);
+                            forcastDiv.append(temp1);
+                            forcastDiv.append(wind1);
+                            forcastDiv.append(humidity1);
+
+                            // append to page 
+                            $('#forcast-five').append(forcastDiv);
+
+                        }
+
+
 
                     });
             } else {
