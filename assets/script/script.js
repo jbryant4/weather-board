@@ -34,7 +34,7 @@ function displayDash(cityLat, cityLon, city) {
                         var temp = $('<p>').text('Temp: ' + currentTemp + ' °F');
                         var wind = $('<p>').text('Wind: ' + currentWs + ' MPH');
                         var humidity = $('<p>').text('Humidity: ' + currentHumidity + '%');
-                        var uvi = $('<p>').text('UV Index: ' + currentUvi);
+                        var uvi = $('<p>').text('UV Index: ' + currentUvi).attr('id','uvi');
 
                         // append to the page 
                         $('#current-day').append(title);
@@ -44,7 +44,9 @@ function displayDash(cityLat, cityLon, city) {
                         $('#current-day').append(humidity);
                         $('#current-day').append(uvi);
 
-                        // build 5 day forcast 
+                        // build 5 day forcast
+                        // check uvi
+                        checkUvi(currentUvi); 
                         // place for loop here
                         for (i = 1; i <= 5; i++) {
 
@@ -90,6 +92,17 @@ function displayDash(cityLat, cityLon, city) {
 
 }
 
+function checkUvi(uvi) {
+
+    if (uvi <= 2) {
+        $('#uvi').addClass('low')
+    } else if (uvi <= 8) {
+        $('#uvi').addClass('moderate')
+    } else {
+        $('#uvi').addClass('hi')
+
+    }
+}
 
 function getCoord(city) {
 

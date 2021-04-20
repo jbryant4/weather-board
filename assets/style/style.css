@@ -78,3 +78,19 @@ p {
     border-top: 3px solid darkgrey;
     margin-top: 15px;
 }
+
+.low {
+    background-color: green;
+}
+
+.moderate {
+    background-color: orange;
+}
+
+.high {
+    background-color: red;
+}
+
+#uvi {
+    width: fit-content;
+}
