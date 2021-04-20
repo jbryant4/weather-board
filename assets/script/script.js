@@ -21,6 +21,7 @@ function displayDash(cityLat, cityLon, city) {
 
                         // set varibles response
                         var currentDate = new Date(data.current.dt * 1000);
+                        
                         var currentIcon = data.current.weather[0].icon;
                         var currentTemp = data.current.temp;
                         var currentHumidity = data.current.humidity;
@@ -28,7 +29,7 @@ function displayDash(cityLat, cityLon, city) {
                         var currentUvi = data.current.uvi;
 
                         // create html elements
-                        var title = $('<h2>').text(city + ' (' + currentDate.getMonth() + '/' + currentDate.getDate() + '/' + currentDate.getFullYear() + ')');
+                        var title = $('<h2>').text(city + ' (' + currentDate.toLocaleDateString()+')');
                         var img = $('<img>').attr('src', 'http://openweathermap.org/img/wn/' + currentIcon + '.png')
                         img.attr('alt', 'weather icon');
                         var temp = $('<p>').text('Temp: ' + currentTemp + ' °F');
@@ -61,7 +62,7 @@ function displayDash(cityLat, cityLon, city) {
                             var forcastDiv = $('<div>').addClass('col-md-3 m-1 forcast');
 
                             // create html elements
-                            var title1 = $('<h4>').text('(' + forcastDate.getMonth() + '/' + forcastDate.getDate() + '/' + forcastDate.getFullYear() + ')');
+                            var title1 = $('<h4>').text('(' + forcastDate.toLocaleDateString() + ')');
                             var img1 = $('<img>').attr('src', 'http://openweathermap.org/img/wn/' + forcastIcon + '.png')
                             img1.attr('alt', 'weather icon');
                             var temp1 = $('<p>').text('Temp: ' + forcastTemp + ' °F');
