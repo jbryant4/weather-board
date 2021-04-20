@@ -115,7 +115,7 @@ function getCoord(city) {
 
 function saveCity(city) {
     // create button with class
-    var savedCity = $("<button>").text(city).addClass('saved-button')
+    var savedCity = $("<button>").text(city).addClass('saved-btn btn')
 
     // apend to page
     $('#search-history').append(savedCity);
@@ -173,7 +173,7 @@ function loadCity() {
             var cityButton = cityList[i].city;
 
             // create button with class
-            var savedCity = $("<button>").text(cityButton).addClass('saved-button')
+            var savedCity = $("<button>").text(cityButton).addClass('saved-btn btn')
 
             // apend to page
             $('#search-history').append(savedCity);
