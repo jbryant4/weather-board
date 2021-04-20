@@ -183,4 +183,24 @@ function loadCity() {
 };
 
 
+
+// add event listener for search history btn
+$('#search-history').on('click','button', function(event) {
+
+    // prevent refresh
+    event.preventDefault();
+    // pull text out 
+    var city = $(this).text().trim();
+    // send to coord and display on page
+    getCoord(city);
+});
+
+$('#delete-btn').on('click', function(event){
+    event.preventDefault
+    // clear local storage and search history div
+    $('#search-history').empty();
+    localStorage.clear();
+
+});
+
 loadCity();
