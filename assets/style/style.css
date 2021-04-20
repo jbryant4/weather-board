@@ -1,0 +1,80 @@
+
+.forcast, #current-day {
+    border: 3px solid black;
+}
+
+header {
+    background-image: linear-gradient(green, blue);
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: white;
+    height: 65px;
+    margin-bottom: 15px;
+}
+
+#city-input {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    height: 40px;
+}
+
+.btn {
+
+    width: 100%;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 700;
+
+}
+
+#submit-btn {
+    background-color: lightblue;
+    
+}
+
+#submit-btn:hover {
+    background-color: darkblue;
+    color: white;
+}
+
+#search-form {
+    border-bottom: 3px solid darkgray;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.saved-btn {
+    background-color: gray;
+    margin: 5px auto;    
+}
+
+.saved-btn:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+p {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#current-day {
+    margin-bottom: 25px;
+}
+
+.forcast {
+    color: white;
+    background-color: darkslateblue;
+}
+
+#delete-btn {
+    background-color: royalblue;
+}
+
+#delete-div {
+    padding-top: 15px;
+    border-top: 3px solid darkgrey;
+    margin-top: 15px;
+}
